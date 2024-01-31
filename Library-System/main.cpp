@@ -6,12 +6,13 @@ using namespace std;
 const int MAX_BOOKS = 10;
 const int MAX_USERS = 10;
 
+//Defining the struct of the books
 struct book{
     int id;
     string name;
     int quantity;
     int borrowed;
-
+    //constructor to initialize the varibles
     book(){
         id = -1;
         name = "";
@@ -63,12 +64,14 @@ bool compare_book_by_name(book &a, book& b) {
     return a.name < b.name;
 }
 
+
+//Defining the struct of the users
 struct user{
     int id;
     string name;
     int borrowed_books_ids[MAX_BOOKS];
     int len;
-
+    //constructor to initialize the variables
     user(){
         name = "";
         len = 0;
@@ -120,9 +123,11 @@ struct user{
 struct library_system{
     int tot_books;
     int tot_users;
+    //Defining The Main Objects
     book books[MAX_BOOKS];
     user users[MAX_USERS];
 
+    //constructor to initialize the variables
     library_system(){
         tot_books = tot_users = 0;
     }
